@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Mentor Helpers</title>
+    <link rel="stylesheet" href="build/bundle.css">
+  </head>
+  <body>
+    <div class="container">
+        <h2 class="text-center">Mentor Settings</h2>
+        <hr>
+
+        <h3 class="text-center">Login in Telegram</h3>
+        <div class="row">
+          <div class="col-6">
+            <label for="phoneNumber" class="form-label">Phone number</label>
+            <input id="phoneNumber" class="form-control" type="text" placeholder="Phone number">
+
+            <button id="sendVerificationCode" type="button" class="btn btn-success mt-2">Send verification code</button>
+          </div>
+          <div class="col-6">
+            <label for="verificationCode" class="form-label">Verification code</label>
+            <input id="verificationCode" class="form-control" type="text" placeholder="Verification code">
+
+            <label for="password" class="form-label">Password (optional)</label>
+            <input id="password" class="form-control" type="password" placeholder="Password (optional)">
+
+            <button id="loginInTelegram" type="button" class="btn btn-success mt-2">Login</button>
+          </div>
+        </div>
+        <div id="loginStatus"></div>
+
+        <hr>
+        <div class="mb-3">
+            <label for="telethonSession" class="form-label">Telethon Session</label>
+            <textarea id="tgSession" class="form-control" rows="3"></textarea>
+        </div>
+        <div>
+          <label for="mentorUuid" class="form-label">MentorUUID</label>
+          <input id="mentorUuid" class="form-control" type="text" placeholder="Mentor UUID">
+        </div>
+        <button id="saveSettings" type="button" class="btn btn-success mt-2">Save</button>
+        <div id="status"></div>
+
+        <hr>
+        <h3 class="text-center">Templates</h3>
+
+        <div class="mt-2">
+          <h4 class="text-center">Plan Template</h4>
+          <p>There are two variables for plan template: {gist} and {comment}</p>
+          <p>
+            Example:
+            <br>
+            #WeeklyPlan
+            <br>
+            Hi, here is your plan for next week: {gist}
+            <br>
+            {comment}
+          </p>
+          <textarea id="planTemplate" class="form-control" rows="5"></textarea>
+        </div>
+        <button id="savePlanTemplate" type="button" class="btn btn-success mt-2">Save</button>
+        <div id="templateStatus"></div>
+    </div>
+
+    <script src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Mentors Extension",
+    "version": "0.0.1",
+    "options_page": "options.html",
+    "permissions": [
+      "storage"
+    ],
+    "content_scripts": [
+      {
+        "matches": [
+          "https://mentors.dvmn.org/*",
+          "http://mentors.dvmn.org/*"
+        ],
+        "exclude_matches": [
+          "https://mentors.dvmn.org/jupyter/*",
+          "http://mentors.dvmn.org/jupyter/*",
+          "https://mentors.dvmn.org/admin/*",
+          "http://mentors.dvmn.org/admin/*",
+          "http://mentors.dvmn.org/api/*",
+          "https://mentors.dvmn.org/api/*"
+        ],
+        "js": [
+          "build/bundle.js"
+        ],
+        "css": [
+          "build/bundle.css"
+        ]
+      }
+    ]
+  }
