@@ -1,4 +1,4 @@
-name: Build Project
+name: Create Release
 
 on: [push]
 
@@ -23,9 +23,9 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: rymndhng/release-on-push-action@master
+        uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
         with:
           tag_name: release_${{ github.run_number }}
           release_name: Extension ${{ steps.date.outputs.date }}
@@ -34,7 +34,7 @@ jobs:
 
       - uses: actions/upload-release-asset@v1.0.1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./extension.zip
