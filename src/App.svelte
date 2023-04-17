@@ -2,7 +2,7 @@
   import { getLocalStorageValue } from './utils';
 
   let currentUrl = document.URL
-  const baseUrl = 'http://127.0.0.1:8000'
+  const baseUrl = 'https://mentors.neverdieone.ru'
   let opStatus = -1
   let opMessage = ''
   let opInfo = ''
